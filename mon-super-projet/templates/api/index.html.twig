@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ApiController!{% endblock %}
+
+{% block body %}
+
+<h1>Voici ma page d'article</h1>
+
+    {% for article in articles %}
+        <article>
+            <h2>{{ article.title }}</h2>
+                <div class="metadata">{{article.createdAt | date('d/m/Y')}}</div>
+                <div class="content">
+                    <img src="{{article.image}}" alt="">
+                    <p>{{ article.content }}</p>
+                    <button>{{ article.id }}</button>
+                    <p>{{ article.category.title }}</p>
+                </div>
+        </article>
+    {% endfor %}
+
+
+{% endblock %}
